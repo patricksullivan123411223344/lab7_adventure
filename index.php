@@ -4,7 +4,7 @@ $safeUsername = htmlspecialchars($username, ENT_QUOTES | ENT_HTML5);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $name = $_POST['user_name'] ?? '';
-  setcookie('user_name', $username, time() + 86400, '/');
+  setcookie('user_name', $name, time() + 86400, '/');
 
   $firstPage = '1';
   header('Location: adventure.php?page=' . urlencode($firstPage) . '$user_name=' . urlencode($name));
@@ -42,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <!-- JavaScript file for animations -->
-    <script src="js/animations.js"></script>
   </body>
 </html>
 <!-- DO NOT MAKE ANY CHANGES TO THE FOLLOWING HTML CODE! -->
