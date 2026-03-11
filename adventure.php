@@ -4,7 +4,8 @@
             1. Check if a cookie for the user's name exists.
               - If it exists, store its value in a variable.
               - If it does not exist, set the variable to a placeholder name to use in your story. */
-              
+          $username = $_COOKIE['user_name'] ?? "Traveler"
+          $safeUsername = htmlspecialchars($username, ENT_QUOTES | ENT_HTML5)
           /*  2. Get the current page number from the query string. 
               - If it exists, store its value in a variable.
               - If it does not exist, set the variable to an empty string. */
