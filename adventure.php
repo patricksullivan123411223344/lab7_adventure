@@ -1,47 +1,45 @@
 <?php 
 
-    /*
-          TO DO:
+          /* TO DO:
             1. Check if a cookie for the user's name exists.
               - If it exists, store its value in a variable.
-              - If it does not exist, set the variable to a placeholder name to use in your story.
+              - If it does not exist, set the variable to a placeholder name to use in your story. */
               
-            2. Get the current page number from the query string. 
+          /*  2. Get the current page number from the query string. 
               - If it exists, store its value in a variable.
-              - If it does not exist, set the variable to an empty string.
+              - If it does not exist, set the variable to an empty string. */
 
-            3. Get the user's choice number from the query string. 
+          /*  3. Get the user's choice number from the query string. 
               - If it exists, store its value in a variable.
-              - If it does not exist, set the variable to an empty string.
+              - If it does not exist, set the variable to an empty string. */
 
-            4. Create an associative array for the BEGINNING of your story:
+          /*  4. Create an associative array for the BEGINNING of your story:
               - Include a title for the first part of the story. 
               - Add a description that uses the user's name.
-              - Include an indexed array with two choices to continue the story.
+              - Include an indexed array with two choices to continue the story. */
 
-            5. Create an associative array for the MIDDLE of your story:
+          /*  5. Create an associative array for the MIDDLE of your story:
               - Include a title for the second part of the story. 
               - Add two different descriptions (based on the user’s previous choice), each using the user's name.
-              - Include an indexed array with two choices to continue the story.
+              - Include an indexed array with two choices to continue the story. */
 
-            6. Create an associative array for the ENDING of your story:
+          /*  6. Create an associative array for the ENDING of your story:
               - Include a title for the final part of the story. 
               - Add two different ending descriptions (based on the previous choice), using the user's name.
-              - Include an indexed array with ONE option — asking if the user wants to play again.
+              - Include an indexed array with ONE option — asking if the user wants to play again. */
 
-            7. Based on the page number and user’s choice:
+          /*  7. Based on the page number and user’s choice:
               - Use conditional statements to set general variables for:
                 - title
                 - description
                 - choices
-              - Increment the page number each time to move the story forward. 
-              
-            8. Handle errors or invalid input:
+              - Increment the page number each time to move the story forward. */ 
+            
+          /*  8. Handle errors or invalid input:
               - If the page number or choice is missing or invalid:
                 - Set the title and description to an error message.
-                - Include an indexed array with ONE option — asking if the user wants to restart.
-      */
-     
+                - Include an indexed array with ONE option — asking if the user wants to restart. */
+
 ?>
 
 <!DOCTYPE html>

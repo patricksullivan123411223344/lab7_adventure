@@ -1,20 +1,16 @@
 <?php 
+$username = $_COOKIE['user_name'] ?? '';
+$safeUsername = htmlspecialchars($username, ENT_QUOTES | ENT_HTML5);
 
-      /*
-          TO DO:
-            1. Check if a cookie for the user's name exists.
-              - If it exists, store its value in a variable.
-              - If it does not exist, set the variable to an empty string.
-              
-            2. Check if the form was submitted.
-              - If so:
-                a. Get the user's name from the submitted form data.
-                b. Store it in a cookie so we can use it on other pages.
-                c. Redirect the user to the first page of the adventure:
-                      - Go to "adventure.php" and set the name/value pair for the first page in the URL. 
-                d. Use exit() after the redirect to stop the script from continuing.
-      */
-     
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $name = $_POST['user_name'] ?? '';
+  setcookie('user_name', $username, time() + 86400, '/');
+
+  $firstPage = '1';
+  header('Location: adventure.php?page=' . urlencode($firstPage) . '$user_name=' . urlencode($name));
+
+  exit();
+}
 ?>
 
 <!-- DO NOT MAKE ANY CHANGES TO THE FOLLOWING HTML CODE! -->
@@ -38,7 +34,7 @@
       <!-- Form to collect the user's name -->
       <form id="startForm" method="POST" action="index.php">
         <!-- Input field for the user's name -->
-        <input type="text" name="user_name" id="user_name" placeholder="Enter your name" required value="<?= htmlspecialchars($name) ?>" />
+        <input type="text" name="user_name" id="user_name" placeholder="Enter your name" required value="<?= $safeUsername ?>" />
         <br>
         <!-- Submit button to start the adventure -->
         <button type="submit">Start Adventure</button>
