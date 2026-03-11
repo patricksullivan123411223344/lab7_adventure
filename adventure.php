@@ -4,21 +4,28 @@
             1. Check if a cookie for the user's name exists.
               - If it exists, store its value in a variable.
               - If it does not exist, set the variable to a placeholder name to use in your story. */
-          $username = $_COOKIE['user_name'] ?? "Traveler"
-          $safeUsername = htmlspecialchars($username, ENT_QUOTES | ENT_HTML5)
+          $username = $_COOKIE['user_name'] ?? 'Traveler'
+          $safeUsername = htmlspecialchars($username, ENT_QUOTES | ENT_HTML5);
           /*  2. Get the current page number from the query string. 
               - If it exists, store its value in a variable.
               - If it does not exist, set the variable to an empty string. */
-
+          $page = $_GET['page'] ?? '';
           /*  3. Get the user's choice number from the query string. 
               - If it exists, store its value in a variable.
               - If it does not exist, set the variable to an empty string. */
-
+          $choice = $_GET['choice']  ?? '';
           /*  4. Create an associative array for the BEGINNING of your story:
               - Include a title for the first part of the story. 
               - Add a description that uses the user's name.
               - Include an indexed array with two choices to continue the story. */
-
+          $beginning = [
+            "title" => "Just Another Day"
+            "Description" => "$safeUsername, ..."
+            "choices" => [
+              "Head toward the radio signal...",
+              "Explore the abandoned store for supplies..."
+            ]
+          ]
           /*  5. Create an associative array for the MIDDLE of your story:
               - Include a title for the second part of the story. 
               - Add two different descriptions (based on the user’s previous choice), each using the user's name.
